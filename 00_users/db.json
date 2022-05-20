@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "3",
+      "firstname": "Balex",
+      "age": 24,
+      "companyId": "2"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "description": "iPhone"
+    },
+    {
+      "id": "2",
+      "name": "Google",
+      "description": "search"
+    }
+  ]
+}
