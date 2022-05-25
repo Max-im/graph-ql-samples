@@ -1,0 +1,68 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "One Day",
+      "genre": "fiction",
+      "authorId": 3
+    },
+    {
+      "id": 2,
+      "name": "Second Chance",
+      "genre": "fiction",
+      "authorId": 1
+    },
+    {
+      "id": 3,
+      "name": "Three Friends",
+      "genre": "war",
+      "authorId": 2
+    },
+    {
+      "name": "Color of Night",
+      "genre": "fiction",
+      "authorId": "4",
+      "id": 4
+    },
+    {
+      "name": "Bright Light",
+      "genre": "fiction",
+      "authorId": "4",
+      "id": 5
+    },
+    {
+      "name": "NNN",
+      "genre": "lal",
+      "authorId": "1",
+      "id": 6
+    },
+    {
+      "name": "Animal Farm",
+      "genre": "anti utopia",
+      "authorId": "3",
+      "id": 7
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "age": 20,
+      "name": "Benjamin"
+    },
+    {
+      "id": 2,
+      "age": 25,
+      "name": "Sebastian"
+    },
+    {
+      "id": 3,
+      "age": 30,
+      "name": "Stephan"
+    },
+    {
+      "name": "Santiago",
+      "age": 40,
+      "id": 4
+    }
+  ]
+}
