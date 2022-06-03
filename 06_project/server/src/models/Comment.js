@@ -14,8 +14,8 @@ class Comment {
   
         const { post, text } = input;
   
-        const postItem = await postModel.findById(post);
-        if (!(postItem && postItem.published)) throw new Error('The Post Not Found');
+        const postItem = await postModel.getById(post);
+        // if (!(postItem && postItem.published)) throw new Error('The Post Not Found');
   
         const data = { post: {connect: {id: Number(post)}}, text, author: {connect: {id: userId}} };
         return await this.db.comments.create({ data, include: { post: true, author: true } });

@@ -40,9 +40,11 @@ class User {
   async update(input, request) {
     const userId = getUserId(request);
 
+    const data = {...input};
+    if (data.age) data.age = Number(data.age);
+
     return await this.db.users.update({
-      where: { id: userId },
-      data: input,
+      where: { id: userId }, data
     });
   }
 

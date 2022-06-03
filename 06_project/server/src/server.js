@@ -1,7 +1,7 @@
-import 'dotenv/config';
+import '../env';
+import 'event-target-polyfill';
 import express from 'express';
 import { PrismaClient } from '@prisma/client';
-import 'event-target-polyfill';
 import { createServer, createPubSub } from '@graphql-yoga/node';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import cors from 'cors';
@@ -26,4 +26,4 @@ const context = {
 
 app.use('/graphql', createServer({ schema, context }));
 
-app.listen(4000, () => console.log('run'));
+app.listen(4001, () => console.log('run'));

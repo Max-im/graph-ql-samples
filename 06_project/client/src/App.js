@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import AuthMenu from './components/AuthMenu';
+import Navigation from './components/Navigation';
+import { AuthContext } from './context/authContext';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const currentUser = localStorage.getItem('user');
+    
+    if (currentUser) {
+      const userData = JSON.parse(currentUser);
+      setUser(userData);
+    }
+  }, []);
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContext.Provider value={{ user, setUser }}>
+      <div className="app">
+        <header className="header container">         
+          <Navigation />
+          <AuthMenu />
+        </header>
+        <Outlet />
+      </div>
+    </AuthContext.Provider>
   );
 }
 

@@ -50,9 +50,7 @@ module.exports = {
       }
       
       return post;
-    } catch (err) {
-      console.log(err.message);
-    }
+    } catch (err) { console.log(err.message) }
   },
   createComment: async (parent, { input }, { pubsub, models, request }) => {
     try {

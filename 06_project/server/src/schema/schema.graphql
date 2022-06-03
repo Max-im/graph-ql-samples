@@ -110,5 +110,6 @@ type Query {
     posts(query: String, take: Int, skip: Int): [Post!]!
     comments(postId: ID!, take: Int, skip: Int): [Comment!]!
     me: User!
-    post: Post!
+    post(postId: ID!): Post!
+    user(id: ID!): User!
 }

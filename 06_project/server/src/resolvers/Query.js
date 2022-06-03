@@ -39,5 +39,20 @@ module.exports = {
       return await db.users.findUnique({where: {id: userId}});
     } catch(err) {console.log(err.message)}
   },
-  post: (parent, args, ctx) => {},
+  post: async (parent, {postId}, {db, models}) => {
+    try {
+      return await db.posts.findUnique({
+        where: {id: Number(postId)},
+        include: { author: true, comments: true }
+      });
+    } catch(err) {console.log(err.message)}
+  },
+  user: async (parent, {id}, {db, models}) => {
+    try {
+      return await db.users.findUnique({
+        where: {id: Number(id)},
+        include: { posts: true, comments: true }
+      });
+    } catch(err) {console.log(err.message)}
+  }
 };
